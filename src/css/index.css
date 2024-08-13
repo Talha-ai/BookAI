@@ -99,7 +99,7 @@ html{
 
   /* Adjust the animation for iPhones */
   .st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
-    animation: showRayIOS 1s forwards;
+    animation: showRayIOS 0.4s ease 0s 1 forwards;
   }
 
   @keyframes showRayIOS {
