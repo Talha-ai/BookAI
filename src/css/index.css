@@ -96,10 +96,19 @@ html{
   top: 20px !important;
 }
 
+@keyframes showRayIOS {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Apply a scale fix for iOS */
 .ios-scale-fix .sunMoon {
   transform: scale(1) !important;
-  transition: none !important;
+  animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
 }
 
 /* Apply a fix for macOS Safari */
