@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --icon-color-light: #1a202c; 
+  --icon-color-dark: #e2e8f0; 
+}
+
+
 html{
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 
