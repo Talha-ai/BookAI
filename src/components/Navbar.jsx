@@ -104,7 +104,7 @@ const ThemeToggle = () => {
         viewBox="0 0 20 20"
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
-        className={`relative top-1 -ml-3 lg:ml-12 md:top-1.5 ${
+        className={`iphone relative top-1 -ml-3 lg:ml-12 md:top-1.5 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
         }`}
       >
