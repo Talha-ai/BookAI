@@ -2,21 +2,23 @@ export const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="container mx-auto p-8 mb-2 w-[936px] bg-[#1E293B] rounded-lg border border-[#334155]"
+      className="container mx-auto p-4 sm:p-8 mb-4 sm:mb-8 w-full max-w-4xl bg-[#1E293B] rounded-lg border border-[#334155]"
     >
-      <h2 className="mt-8 text-2xl font-bold text-[#A5B4FC]">API Pricing</h2>
-      <p className="text-base text-[#E2E8F0]">
+      <h2 className="mt-4 text-xl sm:text-2xl font-bold text-[#A5B4FC]">
+        API Pricing
+      </h2>
+      <p className="text-sm sm:text-base text-[#E2E8F0]">
         Our API pricing is based on the model used and the number of tokens
         processed. Here's a breakdown of the costs:
       </p>
 
-      <div className="mt-6 overflow-hidden rounded-xl">
+      <div className="mt-6 overflow-x-auto rounded-xl">
         <table className="w-full text-left bg-[#1E293B] border border-[#334155]">
           <thead className="bg-[#6366F1]">
             <tr>
-              <th className="p-4 text-[12.8px] text-white">API</th>
-              <th className="p-4 text-[12.8px] text-white">MODEL</th>
-              <th className="p-4 text-[12.8px] text-white">
+              <th className="p-4 text-xs sm:text-[12.8px] text-white">API</th>
+              <th className="p-4 text-xs sm:text-[12.8px] text-white">MODEL</th>
+              <th className="p-4 text-xs sm:text-[12.8px] text-white">
                 PRICE PER 1K TOKENS
               </th>
             </tr>
@@ -48,7 +50,7 @@ export const Pricing = () => {
 
       <article className="mt-8">
         <h3 className="text-lg font-bold text-[#A5B4FC]">Token Estimation</h3>
-        <p className="text-base text-[#E2E8F0]">
+        <p className="text-sm sm:text-base text-[#E2E8F0]">
           On average, 1 token is approximately 4 characters or 0.75 words. For
           precise pricing, we recommend using our token calculator tool.
         </p>
@@ -56,7 +58,7 @@ export const Pricing = () => {
 
       <article className="mt-8">
         <h3 className="text-lg font-bold text-[#A5B4FC]">Billing</h3>
-        <p className="text-base text-[#E2E8F0]">
+        <p className="text-sm sm:text-base text-[#E2E8F0]">
           You will only be charged for the tokens used in generating the book.
           The API tracks token usage and bills accordingly. Detailed usage
           reports are available in your account dashboard.
@@ -65,5 +67,3 @@ export const Pricing = () => {
     </section>
   );
 };
-
-export default Pricing;
