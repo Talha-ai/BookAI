@@ -101,13 +101,18 @@ html{
     transform: scale(0);
   }
   100% {
-    transform: scale(2);
+    transform: scale(1.2);
   }
 }
 
 /* Apply a scale fix for iOS */
 .ios-scale-fix .sunMoon {
-  transform: scale(2) !important;
+  transform: scale(1.2) !important;
+  animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
+}
+
+/* Apply the iOS-specific animation to the .sunRay elements when the input is checked */
+.ios-scale-fix .themeToggleInput:checked + svg .sunRay {
   animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
 }
 
