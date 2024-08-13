@@ -104,7 +104,7 @@ const ThemeToggle = () => {
         stroke="none"
         className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
           /Macintosh|iPhone|iPad|iPod/i.test(navigator.userAgent)
-            ? 'ios-top-fix'
+            ? 'top-5'
             : 'top-1'
         } ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
       >
