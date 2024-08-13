@@ -16,7 +16,7 @@ function AppContent() {
 
   return (
     <div
-      className={`w-full h-full ${
+      className={`w-full min-h-screen ${
         theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'
       } font-inter`}
     >

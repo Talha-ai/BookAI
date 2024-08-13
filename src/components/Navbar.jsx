@@ -102,7 +102,7 @@ const ThemeToggle = () => {
         width="18"
         height="18"
         viewBox="0 0 20 20"
-        fill={theme === 'dark' ? 'currentColor' : 'currentColor'} 
+        fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
         className={`relative top-1 -ml-3 lg:ml-12 md:top-1.5 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
@@ -116,7 +116,7 @@ const ThemeToggle = () => {
           className="sunMoon"
           cx="10"
           cy="10"
-          r="8"
+          r="7"
           mask="url(#moon-mask)"
         ></circle>
         <g>
