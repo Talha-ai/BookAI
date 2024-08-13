@@ -88,21 +88,12 @@ const NavItem = ({ label, href }) => {
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
-  useEffect(() => {
-    const browser = Bowser.getParser(window.navigator.userAgent);
-    const browserInfo = browser.getBrowser();
-    const isSafari = browserInfo.name === 'Safari';
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
-    if (isIOS) {
-      sunmoon.classList.add('ios-top-fix');
-    } else if (isSafari) {
-      sunmoon.classList.add('top-adjust-safari');
-    } else {
-      sunmoon.classList.add('top-adjust');
-    }
-  }, []);
+  // Determine if the user agent is macOS and Safari
+  const userAgent = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
+  const isMacOS = /Macintosh/.test(userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
 
   return (
     <label className="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
@@ -118,8 +109,8 @@ const ThemeToggle = () => {
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
         className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
-          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-        }`}
+          isIOS ? 'ios-top-fix' : isMacOS && isSafari ? 'mac-top-fix' : 'top-1'
+        } ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
       >
         <mask id="moon-mask">
           <rect x="0" y="0" width="20" height="20" fill="white"></rect>

@@ -91,12 +91,19 @@ html{
   }
 }
 
-.themeToggle.st-sunMoonThemeToggleBtn svg.top-adjust {
-  top: 4px;
+/* Apply a fix for macOS Safari */
+.mac-top-fix {
+  top: 20px !important; /* Adjust based on Safari on macOS positioning issues */
 }
 
-.themeToggle.st-sunMoonThemeToggleBtn svg.top-adjust-safari {
-  top: 20px !important; 
+/* Apply a fix for iOS Safari */
+.ios-top-fix {
+  top: 20px !important;
+}
+
+/* Apply fallback for other browsers */
+.top-1 {
+  top: 4px;
 }
 
 /* Apply a fix for all WebKit browsers */
