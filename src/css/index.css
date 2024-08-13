@@ -91,51 +91,23 @@ html{
   }
 }
 
-/* Apply a fix for iOS Safari */
-.ios-top-fix {
-  top: 20px !important;
-}
-
-@keyframes showRayIOS {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
-
-/* Apply a scale fix for iOS */
-.ios-scale-fix .sunMoon {
-  transform: scale(1.2) !important;
-  animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
-}
-
-/* Apply the iOS-specific animation to the .sunRay elements when the input is checked */
-.ios-scale-fix .themeToggleInput:checked + svg .sunRay {
-  animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
-}
-
-/* Apply a fix for macOS Safari */
-.mac-top-fix {
-  top: 20px !important; /* Adjust based on Safari on macOS positioning issues */
-}
-
-/* Apply fallback for other browsers */
-.top-1 {
-  top: 4px;
-}
-
-/* Apply a fix for all WebKit browsers */
-@supports (-webkit-appearance: none) {
-  .top-adjust-safari {
-    top: 20px !important;
-  }
-}
-
-/* Fallback for iOS specific styles */
+/* Specific adjustment for iPhones */
 @supports (-webkit-touch-callout: none) {
-  .ios-top-fix {
-    top: 20px !important;
+  .st-sunMoonThemeToggleBtn svg .sunMoon {
+    transform: scale(1) !important; /* Set scale to 1 for iPhones */
+  }
+
+  /* Adjust the animation for iPhones */
+  .st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
+    animation: showRayIOS 1s forwards;
+  }
+
+  @keyframes showRayIOS {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }
