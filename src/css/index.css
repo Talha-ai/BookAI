@@ -40,7 +40,7 @@ html{
 .st-sunMoonThemeToggleBtn svg .sunMoon {
   transform-origin: center center;
   transition: inherit;
-  transform: scale(1);
+  transform: scale(0.8);
 }
 
 .st-sunMoonThemeToggleBtn svg .sunRay {
@@ -87,7 +87,7 @@ html{
     transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.7);
   }
 }
 

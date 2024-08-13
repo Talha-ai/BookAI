@@ -116,7 +116,7 @@ const ThemeToggle = () => {
           className="sunMoon"
           cx="10"
           cy="10"
-          r="7"
+          r="6"
           mask="url(#moon-mask)"
         ></circle>
         <g>
