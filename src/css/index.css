@@ -101,13 +101,13 @@ html{
     transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    transform: scale(2);
   }
 }
 
 /* Apply a scale fix for iOS */
 .ios-scale-fix .sunMoon {
-  transform: scale(1) !important;
+  transform: scale(2) !important;
   animation: showRayIOS 1s forwards; /* Apply the new animation for iOS */
 }
 
