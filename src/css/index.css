@@ -99,6 +99,7 @@ html{
 /* Apply a scale fix for iOS */
 .ios-scale-fix .sunMoon {
   transform: scale(1) !important;
+  transition: none !important;
 }
 
 /* Apply a fix for macOS Safari */
