@@ -91,7 +91,7 @@ html{
   }
 }
 
-.top-adjust {
+.themeToggle.st-sunMoonThemeToggleBtn svg.top-adjust {
   top: 4px;
 }
 

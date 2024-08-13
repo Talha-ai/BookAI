@@ -21,7 +21,6 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const { theme } = useTheme();
-  console.log(isOpen);
 
   return (
     <div>
@@ -91,18 +90,19 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
+    console.log('hi');
     const browser = Bowser.getParser(window.navigator.userAgent);
     const browserInfo = browser.getBrowser();
     const isSafari = browserInfo.name === 'Safari';
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
-    if (isIOS) {
-      sunmoon.classList.add('ios-top-fix');
-    } else if (isSafari) {
-      sunmoon.classList.add('top-adjust-safari');
-    } else {
-      sunmoon.classList.add('top-adjust');
+    if (sunmoon) {
+      if (isIOS) {
+        sunmoon.classList.add('ios-top-fix');
+      } else if (isSafari) {
+        sunmoon.classList.add('top-adjust-safari');
+      }
     }
   }, []);
 
@@ -119,7 +119,7 @@ const ThemeToggle = () => {
         viewBox="0 0 20 20"
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
-        className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
+        className={`relative -ml-3 lg:ml-12 md:top-1.5 top-1 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
         }`}
       >
