@@ -91,14 +91,19 @@ html{
   }
 }
 
-/* Apply a fix for macOS Safari */
-.mac-top-fix {
-  top: 20px !important; /* Adjust based on Safari on macOS positioning issues */
-}
-
 /* Apply a fix for iOS Safari */
 .ios-top-fix {
   top: 20px !important;
+}
+
+/* Apply a scale fix for iOS */
+.ios-scale-fix .sunMoon {
+  transform: scale(1) !important;
+}
+
+/* Apply a fix for macOS Safari */
+.mac-top-fix {
+  top: 20px !important; /* Adjust based on Safari on macOS positioning issues */
 }
 
 /* Apply fallback for other browsers */

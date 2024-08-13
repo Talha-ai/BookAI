@@ -89,11 +89,24 @@ const NavItem = ({ label, href }) => {
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  // Determine if the user agent is macOS and Safari
-  const userAgent = navigator.userAgent;
-  const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
-  const isMacOS = /Macintosh/.test(userAgent);
-  const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
+    const isMacOS = /Macintosh/.test(userAgent);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+    const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
+    if (sunmoon) {
+      if (isIOS) {
+        sunmoon.classList.add('ios-top-fix');
+        sunmoon.classList.add('ios-scale-fix');
+      } else if (isMacOS && isSafari) {
+        sunmoon.classList.add('mac-top-fix');
+      } else {
+        sunmoon.classList.add('top-adjust');
+      }
+    }
+  }, []);
 
   return (
     <label className="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
@@ -109,7 +122,9 @@ const ThemeToggle = () => {
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
         className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
-          isIOS ? 'ios-top-fix' : isMacOS && isSafari ? 'mac-top-fix' : 'top-1'
+          /iPhone|iPad|iPod/i.test(navigator.userAgent)
+            ? 'ios-top-fix'
+            : 'top-1'
         } ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
       >
         <mask id="moon-mask">
