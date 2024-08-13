@@ -102,9 +102,11 @@ const ThemeToggle = () => {
         viewBox="0 0 20 20"
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
-        className={`relative top-1 -ml-3 lg:ml-12 md:top-1.5 ${
-          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-        }`}
+        className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
+          /iPhone|iPad|iPod/i.test(navigator.userAgent)
+            ? 'ios-top-fix'
+            : 'top-1'
+        } ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
       >
         <mask id="moon-mask">
           <rect x="0" y="0" width="20" height="20" fill="white"></rect>

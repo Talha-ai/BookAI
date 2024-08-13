@@ -91,3 +91,9 @@ html{
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* iOS specific styles */
+  .ios-top-fix {
+    top: 3px !important;
+  }
+}
