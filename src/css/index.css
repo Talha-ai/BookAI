@@ -101,10 +101,18 @@ html{
   }
 } */
 
+.top-adjust {
+  top: 4px;
+}
+
+.top-adjust-safari {
+  top: 20px !important; /* Adjust based on Safari positioning issues */
+}
+
 /* Apply a fix for all WebKit browsers */
 @supports (-webkit-appearance: none) {
-  .top-adjust {
-    top: 20px !important; /* Adjust based on Safari positioning issues */
+  .top-adjust-safari {
+    top: 20px !important;
   }
 }
 

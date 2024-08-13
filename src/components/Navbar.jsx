@@ -91,14 +91,16 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    // Detect Safari using Bowser
     const browser = Bowser.getParser(window.navigator.userAgent);
     const isSafari = browser.satisfies({ safari: true });
 
+    const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
     if (isSafari) {
-      document
-        .querySelector('.st-sunMoonThemeToggleBtn svg')
-        .classList.add('top-adjust');
+      sunmoon.classList.add('top-adjust-safari');
+      sunmoon.classList.remove('top-adjust');
+    } else {
+      sunmoon.classList.add('top-adjust');
+      sunmoon.classList.remove('top-adjust-safari');
     }
   }, []);
 
