@@ -32,7 +32,7 @@ export const Navbar = () => {
       <ul
         className={`flex-col sm:flex-row sm:flex sm:items-center sm:justify-center ${
           isOpen ? 'flex' : 'hidden'
-        } py-4 text-[14.4px] text-[#E2E8F0] space-y-2 sm:space-y-0`}
+        } py-4 text-[14.4px] text-[#E2E8F0] space-y-2 sm:space-y-0 font-medium`}
       >
         <li className="my-2 mx-4 cursor-pointer hover:text-[#22d3ee] transition-colors duration-300">
           <a href="#overview" className="block">

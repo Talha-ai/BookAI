@@ -16,9 +16,13 @@ export const Pricing = () => {
         <table className="w-full text-left bg-[#1E293B] border border-[#334155]">
           <thead className="bg-[#6366F1]">
             <tr>
-              <th className="p-4 text-xs sm:text-[12.8px] text-white">API</th>
-              <th className="p-4 text-xs sm:text-[12.8px] text-white">MODEL</th>
-              <th className="p-4 text-xs sm:text-[12.8px] text-white">
+              <th className="p-4 text-xs sm:text-[12.8px] text-white font-semiBold">
+                API
+              </th>
+              <th className="p-4 text-xs sm:text-[12.8px] text-white font-semiBold">
+                MODEL
+              </th>
+              <th className="p-4 text-xs sm:text-[12.8px] text-white font-semiBold">
                 PRICE PER 1K TOKENS
               </th>
             </tr>
