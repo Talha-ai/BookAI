@@ -92,15 +92,17 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     const browser = Bowser.getParser(window.navigator.userAgent);
-    const isSafari = browser.satisfies({ safari: true });
+    const browserInfo = browser.getBrowser();
+    const isSafari = browserInfo.name === 'Safari';
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
-    if (isSafari) {
+    if (isIOS) {
+      sunmoon.classList.add('ios-top-fix');
+    } else if (isSafari) {
       sunmoon.classList.add('top-adjust-safari');
-      sunmoon.classList.remove('top-adjust');
     } else {
       sunmoon.classList.add('top-adjust');
-      sunmoon.classList.remove('top-adjust-safari');
     }
   }, []);
 
