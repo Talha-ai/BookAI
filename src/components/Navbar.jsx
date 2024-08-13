@@ -88,22 +88,19 @@ const NavItem = ({ label, href }) => {
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     const browser = Bowser.getParser(window.navigator.userAgent);
     const browserInfo = browser.getBrowser();
     const isSafari = browserInfo.name === 'Safari';
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     const sunmoon = document.querySelector('.st-sunMoonThemeToggleBtn svg');
-    if (sunmoon) {
-      if (isIOS) {
-        sunmoon.classList.add('ios-top-fix');
-      } else if (isSafari) {
-        sunmoon.classList.add('top-adjust-safari');
-      } else {
-        sunmoon.classList.add('top-adjust');
-      }
+    if (isIOS) {
+      sunmoon.classList.add('ios-top-fix');
+    } else if (isSafari) {
+      sunmoon.classList.add('top-adjust-safari');
+    } else {
+      sunmoon.classList.add('top-adjust');
     }
   }, []);
 
