@@ -7,14 +7,9 @@
   --icon-color-dark: #e2e8f0; 
 }
 
-
-html{
+html {
   color-scheme: light dark;
   scroll-behavior: smooth;
-}
-
-.iphone {
-  transform: translateZ(0);
 }
 
 .themeToggle {
@@ -38,13 +33,17 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-transition: transform 0.4s ease;
   transition: transform 0.4s ease;
+  -webkit-transform: rotate(40deg);
   transform: rotate(40deg);
 }
 
 .st-sunMoonThemeToggleBtn svg .sunMoon {
-  transform-origin: center center;
   transition: inherit;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale(1);
   transform: scale(1);
 }
 
@@ -93,5 +92,12 @@ html{
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* iOS specific styles */
+  .st-sunMoonThemeToggleBtn svg {
+    transform: none;
   }
 }
