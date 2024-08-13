@@ -95,7 +95,7 @@ html{
   top: 4px;
 }
 
-.top-adjust-safari {
+.themeToggle.st-sunMoonThemeToggleBtn svg.top-adjust-safari {
   top: 20px !important; 
 }
 

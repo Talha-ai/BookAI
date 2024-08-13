@@ -89,8 +89,7 @@ const NavItem = ({ label, href }) => {
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    console.log('hi');
+  useLayoutEffect(() => {
     const browser = Bowser.getParser(window.navigator.userAgent);
     const browserInfo = browser.getBrowser();
     const isSafari = browserInfo.name === 'Safari';
@@ -102,6 +101,8 @@ const ThemeToggle = () => {
         sunmoon.classList.add('ios-top-fix');
       } else if (isSafari) {
         sunmoon.classList.add('top-adjust-safari');
+      } else {
+        sunmoon.classList.add('top-adjust');
       }
     }
   }, []);
@@ -119,7 +120,7 @@ const ThemeToggle = () => {
         viewBox="0 0 20 20"
         fill={theme === 'dark' ? 'currentColor' : 'currentColor'}
         stroke="none"
-        className={`relative -ml-3 lg:ml-12 md:top-1.5 top-1 ${
+        className={`relative -ml-3 lg:ml-12 md:top-1.5 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
         }`}
       >
