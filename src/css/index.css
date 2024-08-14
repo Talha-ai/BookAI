@@ -94,10 +94,9 @@ html{
 /* Specific adjustment for iPhones */
 @supports (-webkit-touch-callout: none) {
   .st-sunMoonThemeToggleBtn svg .sunMoon {
-    transform: scale(1) !important; /* Set scale to 1 for iPhones */
+    transform: scale(1.2) !important; 
   }
 
-  /* Adjust the animation for iPhones */
   .st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
     animation: showRayIOS 0.4s ease 0s 1 forwards;
   }

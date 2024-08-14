@@ -1,6 +1,5 @@
 import { useTheme } from '../context/ThemeContext';
 import { useState, useEffect } from 'react';
-import Bowser from 'bowser';
 
 export const Navbar = () => {
   const { theme } = useTheme();
