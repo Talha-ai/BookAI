@@ -94,7 +94,7 @@ html{
 /* Specific adjustment for iPhones */
 @supports (-webkit-touch-callout: none) {
   .st-sunMoonThemeToggleBtn svg .sunMoon {
-    transform: scale(1.2) !important; 
+    transform: scale(1) !important; 
   }
 
   .st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
@@ -106,7 +106,7 @@ html{
       transform: scale(0);
     }
     100% {
-      transform: scale(1.2);
+      transform: scale(1);
     }
   }
 }
