@@ -95,6 +95,7 @@ html{
 @supports (-webkit-touch-callout: none) {
   .st-sunMoonThemeToggleBtn svg .sunMoon {
     transform: scale(1.2) !important; 
+    overflow: visible;
   }
 
   .st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
